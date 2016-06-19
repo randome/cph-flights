@@ -25,7 +25,7 @@ module Parsers
       flight_info_attributes.each do |name, xpath|
         flight_info[name] = xpath_text(table_row, xpath).strip
       end
-      OpenStruct.new(flight_info)
+      flight_info
     end
 
     def xpath_text(table_row, xpath)
