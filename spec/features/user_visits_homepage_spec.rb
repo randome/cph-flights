@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User Visits Homepage" do
+feature "User Visits Homepage", :js do
   context "for depature flights" do
     it "sees a list of expected departure flights" do
       stub_request(:get, /cph.dk/).to_return(body: departures_html)
