@@ -23,6 +23,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'nokogiri'
 
+gem 'react-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -49,5 +51,6 @@ end
 
 group :test do
   gem 'webmock'
+  gem 'capybara-selenium'
 end
 
