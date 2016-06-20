@@ -14,7 +14,7 @@ describe Parsers::CPHAirportFlightsParser do
 
     def expected_array
       [
-        OpenStruct.new({
+        {
           scheduled_time: "12:10 AM",
           delayed_time: "",
           airline: "Aeroflot",
@@ -22,8 +22,8 @@ describe Parsers::CPHAirportFlightsParser do
           gate: "C35",
           terminal: 'T3',
           flight_status: 'Closed'
-        }),
-        OpenStruct.new({
+        },
+        {
           scheduled_time: "12:30 AM",
           delayed_time: "",
           airline: "Thomas Cook Airlines",
@@ -31,7 +31,7 @@ describe Parsers::CPHAirportFlightsParser do
           gate: "B7",
           terminal: '',
           flight_status: ''
-        })
+        }
       ]
     end
   end
