@@ -1,18 +1,20 @@
 require 'rails_helper'
 
-describe Parsers::CPHAirportFlightsParser do
-  describe ".parse_departure_flights" do
-    it "parses html text to expected array of hashes" do
-      parsed_array = described_class.parse_departure_flights(departures_html)
+describe "API flights endpoint", type: :request do
+  describe "/api/flights/" do
+    it "returns a json array of expected flights" do
+      stub_request(:get, /cph.dk/).to_return(body: departures_html)
 
-      expect(parsed_array).to match(expected_array)
+      headers = {
+        "ACCEPT" => "application/json"
+      }
+
+      get '/api/flights', headers
+
+      expect(response.body).to eq expected_json_flights
     end
 
-    def departures_html
-      File.open(Dir.pwd + '/spec/fixtures/html/' + 'cph_departures_lite.html', 'rb').read
-    end
-
-    def expected_array
+    def expected_json_flights
       [
         {
           scheduled_time: "12:10 AM",
@@ -32,7 +34,11 @@ describe Parsers::CPHAirportFlightsParser do
           terminal: '',
           flight_status: ''
         }
-      ]
+      ].to_json
+    end
+
+    def departures_html
+      File.open(Dir.pwd + '/spec/fixtures/html/' + 'cph_departures_lite.html', 'rb').read
     end
   end
 end
