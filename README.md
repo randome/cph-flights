@@ -58,7 +58,7 @@ No module loader was used like browserify since the project was pretty simple, i
 
 # Screenshots
 
-![App Screenshot](/screenshots/cph-flights.jpg?raw=true)
+![App Screenshot](/screenshots/cph-flights.png?raw=true)
 
 # Hosting
 
