@@ -5,7 +5,7 @@ class Search extends React.Component {
 
   render() {
     return (
-        <input type="text" placeholder="Search flights" onChange={this.handleChange.bind(this)}/>
+        <input type="text" name="Search" placeholder="Search flights" onChange={this.handleChange.bind(this)}/>
     );
   }
 }
