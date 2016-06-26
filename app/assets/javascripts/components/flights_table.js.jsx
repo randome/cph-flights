@@ -17,7 +17,8 @@ class FlightsTable extends React.Component {
   }
 
   render() {
-    return (<table>
+    return (
+    <table className="table table-hover">
       <thead>
         <tr>
           <th>Scheduled Time</th>
