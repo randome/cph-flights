@@ -29,9 +29,12 @@ class FlightsComponent extends React.Component {
   render() {
     return (
       <div>
-        <p>Departure Flights from CPH Aiport</p>
-        <Search onChange={this.onSearchChange.bind(this)} />
-        <FlightsTable flights={this.state.flights} />
+        <div className="row">
+          <Search onChange={this.onSearchChange.bind(this)} />
+        </div>
+        <div className="row">
+          <FlightsTable flights={this.state.flights} />
+        </div>
       </div>
     );
   }

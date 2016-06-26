@@ -5,7 +5,11 @@ class Search extends React.Component {
 
   render() {
     return (
-        <input type="text" name="Search" placeholder="Search flights" onChange={this.handleChange.bind(this)}/>
+      <form role="search">
+        <div className="form-group">
+          <input className="form-control" type="search" name="Search" placeholder="Search flights" onChange={this.handleChange.bind(this)}/>
+        </div>
+      </form>
     );
   }
 }
